@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+	<title>scroll test</title>
+	<link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700|Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="styles.css">
+	<style>
+	  body {
+		width : 300px
+		overflow-y: scroll;
+		overflow-x: hidden; /* hides the horizontal scroll bar */
+	  }
+	  p#slide_controls {
+	    text-align:center;
+	  }
+	  #slide_controls span {
+	    padding-right:2em;
+	    cursor:pointer;
+	  }
+	  #slideX_container {
+	    width:450px;
+	    height:281px;
+	    overflow:hidden;
+	    margin:0 auto;
+	  }
+	  #slideX_images {
+	    width:900px;
+	    -webkit-transition:all 3.0s ease-in-out;
+	    -moz-transition:all 3.0s ease-in-out;
+	    -o-transition:all 3.0s ease-in-out;
+	    transition:all 3.0s ease-in-out;
+	  }
+	  #slideX_images img {
+	    padding:0;
+	    margin:0;
+	    float:left;
+	  }
+	  
+		/* slide vertical */
+	  #slideY_container {
+	    width:450px;
+	    height:281px;
+	    overflow:hidden;
+	    margin:0 auto;
+	  }
+	  #slideY_images {
+	    width:900px;
+	    -webkit-transition:all 1.0s ease-in-out;
+	    -moz-transition:all 1.0s ease-in-out;
+	    -o-transition:all 1.0s ease-in-out;
+	    transition:all 1.0s ease-in-out;
+	  }
+	  #slideY_images img {
+	    padding:0;
+	    margin:0;
+	    float:left;
+	  }
+	</style>
+	<script>
+	  $(document).ready(function() {
+//           $('#slide_controls').on('click', 'span', function(){
+		      $("#slideX_images").css("transform","translateX(-450px)");
+		      $("#slideY_images").css("transform","translateY(-281px)");
+		      // $("#slideXY_images").css("transform","translate(-450px,-281px)"); -- XY
+// 		      $("#slide_controls span").removeClass("selected");
+// 		      $(this).addClass("selected");
+// 	   	  });
+	  });
+  
+	</script>
+</head>
+<body>
+
+<div id="slideX_container" class="shadow">
+   <div id="slideX_images">
+    <img src="file:///storage/sdcard0/Android/data/com.example.cutviewdemo2/files/DemoFile.png" />
+  </div>
+</div>
+<br/>
+<div id="slideY_container" class="shadow">
+  <div id="slideY_images">
+    <img src="./images/Summit.jpg" />
+  </div>	
+</div>
+</body>
+</html>

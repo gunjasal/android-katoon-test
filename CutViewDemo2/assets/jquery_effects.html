@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Effects using jQuery</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+</head>
+<body>
+
+<h3>Fade-in/out</h3>
+<input id='fadeBtn' type='button' value='Click to fade in/out the image'/>
+
+<div class='fadeBox' style='display:none;'>
+  <img id='to_fade' src="images/ClownFish.jpg"/>
+</div>
+
+<h3>Slide</h3>
+<input id='slideHorBtn' type='button' value='Click to slide the image horizontally'/>
+<input id='slideVerBtn' type='button' value='Click to slide the image vertically'/>
+
+<div class='slideBox'>
+  <img id='to_slide' src="images/ClownFish.jpg"/>
+</div>
+
+<h3>Shake</h3>
+<input id='shakeBtn' type='button' value='Click to shake the image'/>
+
+<div class='shakeBox'>
+  <img id='to_shake' src="images/ClownFish.jpg"/>
+</div>
+
+<script>
+  $('#fadeBtn').click(function () {
+    if ($('.fadeBox').css('display') == 'none') {
+      $('.fadeBox').fadeIn('slow');
+    } else {
+      $('.fadeBox').fadeOut('slow');
+    }
+  });
+
+  $('#shakeBtn').click(function () {
+    $('.shakeBox').effect('shake', { times: 3 }, 300);
+  });
+
+  $('#slideHorBtn').click(function () {
+    $('.slideBox').effect('slide', 1000);
+  });
+
+  $('#slideVerBtn').click(function () {
+    $('.slideBox').hide();
+    $('.slideBox').slideDown('slow');
+  });
+</script>
+</body>
+</html>
